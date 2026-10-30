@@ -1,0 +1,350 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Screen 1: Current Medication list -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/med_blue"
+    android:orientation="vertical"
+    tools:context=".CurrentMedicationFragment">
+
+    <!-- Blue header -->
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="110dp"
+        android:gravity="center_horizontal|bottom"
+        android:paddingBottom="4dp"
+        android:text="Medication:"
+        android:textColor="@color/med_white"
+        android:textSize="52sp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="4dp"
+        android:background="@color/med_black" />
+
+    <!-- Scrollable list area -->
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/med_white">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <!-- Medication #1 -->
+            <LinearLayout
+                android:id="@+id/rowMedication1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMedName1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medication #1"
+                            android:textColor="@color/med_black"
+                            android:textSize="34sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/med_black" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDose1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Dose:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvAmount1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <!-- Three-dot menu (Java shows the popup) -->
+                <ImageButton
+                    android:id="@+id/btnMore1"
+                    android:layout_width="48dp"
+                    android:layout_height="64dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="More options for Medication #1"
+                    android:src="@drawable/ic_more_vert_blue" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/med_black" />
+
+            <!-- Medication #2 -->
+            <LinearLayout
+                android:id="@+id/rowMedication2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="160dp"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMedName2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medication #2"
+                            android:textColor="@color/med_black"
+                            android:textSize="34sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/med_black" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDose2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Dose:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvAmount2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <!-- Three-dot menu (Java shows the popup) -->
+                <ImageButton
+                    android:id="@+id/btnMore2"
+                    android:layout_width="48dp"
+                    android:layout_height="64dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="More options for Medication #2"
+                    android:src="@drawable/ic_more_vert_blue" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/med_black" />
+
+            <!-- Medication #3 -->
+            <LinearLayout
+                android:id="@+id/rowMedication3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:minHeight="140dp"
+                android:orientation="horizontal"
+                android:paddingStart="24dp"
+                android:paddingTop="12dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="12dp">
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical">
+
+                        <TextView
+                            android:id="@+id/tvMedName3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="Medication #3"
+                            android:textColor="@color/med_black"
+                            android:textSize="34sp" />
+
+                        <View
+                            android:layout_width="match_parent"
+                            android:layout_height="2dp"
+                            android:background="@color/med_black" />
+                    </LinearLayout>
+
+                    <TextView
+                        android:id="@+id/tvDose3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Dose:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+
+                    <TextView
+                        android:id="@+id/tvAmount3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Amount:"
+                        android:textColor="@color/med_black"
+                        android:textSize="24sp" />
+                </LinearLayout>
+
+                <!-- Three-dot menu (Java shows the popup) -->
+                <ImageButton
+                    android:id="@+id/btnMore3"
+                    android:layout_width="48dp"
+                    android:layout_height="64dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="More options for Medication #3"
+                    android:src="@drawable/ic_more_vert_blue" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/med_black" />
+
+            <!-- Add Medication row -->
+            <LinearLayout
+                android:id="@+id/rowAddMedication"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:background="?attr/selectableItemBackground"
+                android:clickable="true"
+                android:focusable="true"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="10dp">
+
+                <ImageView
+                    android:layout_width="36dp"
+                    android:layout_height="36dp"
+                    android:contentDescription="Add"
+                    android:src="@drawable/ic_add_circle_blue" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:text="Add Medication"
+                    android:textColor="@color/med_black"
+                    android:textSize="34sp" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="4dp"
+                android:background="@color/med_black" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- Bottom Current / Past bar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/med_blue"
+        android:orientation="horizontal"
+        android:paddingStart="16dp"
+        android:paddingTop="24dp"
+        android:paddingEnd="16dp"
+        android:paddingBottom="20dp">
+
+        <LinearLayout
+            android:id="@+id/tabCurrent"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Current"
+                    android:textColor="@color/med_blue"
+                    android:textSize="26sp" />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@color/med_blue" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/tabPast"
+            android:layout_width="0dp"
+            android:layout_height="52dp"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:background="@drawable/bg_tab_button"
+            android:clickable="true"
+            android:focusable="true"
+            android:gravity="center">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Past"
+                    android:textColor="@color/med_black"
+                    android:textSize="26sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+    </LinearLayout>
+</LinearLayout>

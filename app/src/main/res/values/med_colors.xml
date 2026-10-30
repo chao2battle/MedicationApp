@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="med_blue">#FF74B4FF</color>
+    <color name="med_black">#FF1E1E1E</color>
+    <color name="med_white">#FFFFFFFF</color>
+    <color name="med_grey">#FFBDBDBD</color>
+</resources>
