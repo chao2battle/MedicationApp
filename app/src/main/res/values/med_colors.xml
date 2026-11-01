@@ -4,4 +4,6 @@
     <color name="med_black">#FF1E1E1E</color>
     <color name="med_white">#FFFFFFFF</color>
     <color name="med_grey">#FFBDBDBD</color>
+    <color name="med_green">#FF2FFF7E</color>
+    <color name="med_red">#FFFF2F2F</color>
 </resources>
