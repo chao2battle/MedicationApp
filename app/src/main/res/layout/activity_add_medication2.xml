@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Header -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="121dp"
+        android:background="@color/med_blue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Medication"
+        android:textColor="@color/med_white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:layout_constraintBottom_toBottomOf="@+id/title" />
+
+    <!-- Daily Reminder -->
+    <CheckBox
+        android:id="@+id/dailyReminderCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Daily Reminder"
+        android:textSize="24sp"
+        android:checked="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <!-- Time -->
+    <TextView
+        android:id="@+id/timeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Time"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/dailyReminderCheckbox" />
+
+    <EditText
+        android:id="@+id/hourInput"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:hint="00"
+        android:inputType="number"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="8dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/timeLabel" />
+
+    <EditText
+        android:id="@+id/minuteInput"
+        android:layout_width="60dp"
+        android:layout_height="45dp"
+        android:hint="00"
+        android:inputType="number"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/hourInput"
+        app:layout_constraintTop_toTopOf="@+id/hourInput" />
+
+    <Spinner
+        android:id="@+id/amPmSpinner"
+        android:layout_width="75dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintStart_toEndOf="@+id/minuteInput"
+        app:layout_constraintTop_toTopOf="@+id/hourInput" />
+
+    <!-- Local Time Zone -->
+    <CheckBox
+        android:id="@+id/localTimeZoneCheckbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use Local Time Zone"
+        android:textSize="24sp"
+        android:checked="true"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/hourInput" />
+
+    <!-- Divider -->
+    <View
+        android:id="@+id/divider"
+        android:layout_width="0dp"
+        android:layout_height="2dp"
+        android:background="@android:color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/localTimeZoneCheckbox" />
+
+    <!-- Prescription / Pharmacy -->
+    <TextView
+        android:id="@+id/prescriptionPharmacyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prescription/Pharmacy:"
+        android:textSize="28sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <TextView
+        android:id="@+id/prescriptionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prescription:"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prescriptionPharmacyLabel" />
+
+    <EditText
+        android:id="@+id/prescriptionInput"
+        android:layout_width="0dp"
+        android:layout_height="90dp"
+        android:hint="Enter Prescription"
+        android:gravity="start|top"
+        android:inputType="textMultiLine"
+        android:padding="10dp"
+        android:textSize="16sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginEnd="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prescriptionLabel" />
+
+    <TextView
+        android:id="@+id/pharmacyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pharmacy:"
+        android:textSize="16sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="12dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/prescriptionInput" />
+
+    <EditText
+        android:id="@+id/pharmacyInput"
+        android:layout_width="220dp"
+        android:layout_height="wrap_content"
+        android:hint="Pharmacy Name"
+        android:inputType="textCapWords"
+        android:textSize="16sp"
+        android:layout_marginStart="24dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pharmacyLabel" />
+
+    <!-- Bottom Navigation -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottomToolbar"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:background="@color/med_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/previousButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="← Back"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@color/med_white"
+        android:layout_marginStart="20dp"
+        app:layout_constraintStart_toStartOf="@+id/bottomToolbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomToolbar" />
+
+    <Button
+        android:id="@+id/doneButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Done"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        android:backgroundTint="@color/med_white"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/bottomToolbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomToolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

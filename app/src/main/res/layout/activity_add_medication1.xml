@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/med_white">
+
+    <!-- Header -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="121dp"
+        android:background="@color/med_blue"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add Medication"
+        android:textColor="@color/med_white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/backButton"
+        app:layout_constraintTop_toTopOf="@+id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/toolbar" />
+
+    <ImageView
+        android:id="@+id/backButton"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:scaleType="centerCrop"
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:layout_constraintStart_toStartOf="@+id/toolbar"
+        app:layout_constraintTop_toTopOf="@+id/title"
+        app:layout_constraintBottom_toBottomOf="@+id/title" />
+
+    <!-- Medication Name -->
+    <TextView
+        android:id="@+id/nameLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Medication Name:"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+
+    <EditText
+        android:id="@+id/medicationNameInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Name"
+        android:inputType="textCapWords"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/nameLabel" />
+
+    <!-- Dose -->
+    <TextView
+        android:id="@+id/doseLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Dose:"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/medicationNameInput" />
+
+    <EditText
+        android:id="@+id/medicationDoseInput"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Dose"
+        android:inputType="text"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/doseLabel" />
+
+    <!-- Amount -->
+    <TextView
+        android:id="@+id/amountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Amount:"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/medicationDoseInput" />
+
+    <EditText
+        android:id="@+id/medicationAmountInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:hint="Enter Amount"
+        android:inputType="number"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/amountLabel" />
+
+    <!-- Notification -->
+    <TextView
+        android:id="@+id/notificationLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Notification:"
+        android:textSize="24sp"
+        android:textColor="@android:color/black"
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/medicationAmountInput" />
+
+    <EditText
+        android:id="@+id/refillNotificationInput"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:hint="7"
+        android:inputType="number"
+        android:textColor="@color/med_blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@+id/nameLabel"
+        app:layout_constraintTop_toBottomOf="@+id/notificationLabel" />
+
+    <TextView
+        android:id="@+id/refillDaysText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Days Before Refill"
+        android:textSize="18sp"
+        android:textColor="@android:color/black"
+        app:layout_constraintStart_toEndOf="@+id/refillNotificationInput"
+        app:layout_constraintTop_toTopOf="@+id/refillNotificationInput"
+        app:layout_constraintBottom_toBottomOf="@+id/refillNotificationInput" />
+
+    <!-- Bottom Navigation -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/bottomToolbar"
+        android:layout_width="0dp"
+        android:layout_height="65dp"
+        android:background="@color/med_blue"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Next →"
+        android:textSize="18sp"
+        android:backgroundTint="@color/med_white"
+        android:textColor="@android:color/black"
+        android:layout_marginEnd="20dp"
+        app:layout_constraintEnd_toEndOf="@+id/bottomToolbar"
+        app:layout_constraintTop_toTopOf="@+id/bottomToolbar"
+        app:layout_constraintBottom_toBottomOf="@+id/bottomToolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
