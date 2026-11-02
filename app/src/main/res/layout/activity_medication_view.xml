@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/med_white">
 
     <!-- Header -->
     <androidx.appcompat.widget.Toolbar
@@ -14,175 +15,190 @@
         android:background="@color/med_blue"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/medicationTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Medication Name"
-        android:textColor="@color/med_white"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="@+id/toolbar" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageView
         android:id="@+id/backButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:scaleType="centerCrop"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintStart_toStartOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar"
-        app:srcCompat="?attr/actionModeCloseDrawable" />
+        app:srcCompat="?attr/actionModeCloseDrawable"
+        app:layout_constraintStart_toStartOf="@id/toolbar"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:id="@+id/menuButton"
+        android:id="@+id/title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="⋮"
-        android:textColor="@android:color/black"
-        android:textSize="36sp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="@+id/toolbar"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+        android:text="Medication Name"
+        android:textColor="@color/med_white"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@id/backButton"
+        app:layout_constraintTop_toTopOf="@id/toolbar"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar" />
 
     <!-- Medication Information -->
-
     <TextView
         android:id="@+id/medicationNameLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
         android:text="Medication Name:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar" />
+        app:layout_constraintTop_toBottomOf="@id/toolbar" />
 
     <TextView
-        android:id="@+id/medicationDoseLabel"
+        android:id="@+id/medicationNameValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="Medication name"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/medicationNameLabel"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/doseLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
         android:text="Dose:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationNameLabel" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/medicationNameValue" />
 
     <TextView
-        android:id="@+id/medicationAmountLabel"
+        android:id="@+id/doseValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:hint="Medication dose"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/doseLabel"
+        app:layout_constraintTop_toBottomOf="@id/doseLabel" />
+
+    <TextView
+        android:id="@+id/amountLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Amount:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationDoseLabel" />
-
-    <!-- Date Started -->
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/doseValue" />
 
     <TextView
-        android:id="@+id/dateStartedLabel"
+        android:id="@+id/amountValue"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="48dp"
+        android:hint="Remaining amount"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/amountLabel"
+        app:layout_constraintTop_toBottomOf="@id/amountLabel" />
+
+    <!-- Start Date -->
+    <TextView
+        android:id="@+id/startDateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Date Started:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/medicationAmountLabel" />
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/amountValue" />
 
-    <TextView
-        android:id="@+id/dateStartedValue"
+    <EditText
+        android:id="@+id/startDateInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="MM/DD/YYYY"
+        android:hint="MM/DD/YYYY"
+        android:inputType="date"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/startDateLabel"
+        app:layout_constraintTop_toBottomOf="@id/startDateLabel" />
+
+    <!-- Pharmacy -->
+    <TextView
+        android:id="@+id/pharmacyLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Pharmacy:"
         android:textColor="@android:color/black"
         android:textSize="24sp"
-        app:layout_constraintStart_toStartOf="@+id/dateStartedLabel"
-        app:layout_constraintTop_toBottomOf="@+id/dateStartedLabel" />
-
-    <!-- Pharmacy Link -->
+        android:layout_marginTop="16dp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/startDateInput" />
 
     <TextView
         android:id="@+id/pharmacyLink"
-        android:layout_width="wrap_content"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="28dp"
-        android:text="Pharmacy Link"
-        android:textColor="#0000FF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        android:autoLink="web"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/dateStartedValue" />
+        android:hint="Pharmacy link"
+        android:textColor="@color/med_blue"
+        android:textSize="18sp"
+        app:layout_constraintStart_toStartOf="@id/pharmacyLabel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/pharmacyLabel"
+        android:layout_marginEnd="24dp" />
 
-    <!-- Calendar Button -->
-
+    <!-- Screen Actions -->
     <Button
         android:id="@+id/calendarButton"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/med_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Calendar"
+        android:backgroundTint="@color/med_blue"
         android:textColor="@color/med_white"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pharmacyLink" />
-
-    <!-- Notes Button -->
+        android:textSize="16sp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintStart_toStartOf="@id/medicationNameLabel"
+        app:layout_constraintTop_toBottomOf="@id/pharmacyLink" />
 
     <Button
         android:id="@+id/notesButton"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/med_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Notes"
+        android:backgroundTint="@color/med_blue"
         android:textColor="@color/med_white"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/calendarButton" />
-
-    <!-- Refill Button -->
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/calendarButton"
+        app:layout_constraintTop_toTopOf="@id/calendarButton"
+        android:layout_marginStart="12dp" />
 
     <Button
         android:id="@+id/refillButton"
-        android:layout_width="180dp"
-        android:layout_height="50dp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="16dp"
-        android:backgroundTint="@color/med_blue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:text="Refill"
+        android:backgroundTint="@color/med_blue"
         android:textColor="@color/med_white"
-        android:textSize="22sp"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/notesButton" />
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/notesButton"
+        app:layout_constraintTop_toTopOf="@id/calendarButton"
+        android:layout_marginStart="12dp" />
 
-    <!-- Bottom Toolbar -->
-
+    <!-- Bottom Navigation -->
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/bottomToolbar"
         android:layout_width="0dp"
         android:layout_height="65dp"
         android:background="@color/med_blue"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
